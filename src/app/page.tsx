@@ -65,9 +65,20 @@ export default function Home() {
     <div className="min-h-dvh p-6 md:p-10 grid gap-6">
       <header className="flex items-center justify-between">
         <h1 className="text-xl md:text-2xl font-semibold tracking-tight">
-          Gradient Wallpapers
+          Gradient?
+          <span className="text-foreground/60 ">Wallpapers</span>
         </h1>
-        <nav className="flex gap-2">
+        <nav className="flex items-center gap-2">
+          <span className="hidden md:inline text-xs text-foreground/60 mr-3">
+            created by
+            <a
+              href="https://github.com/gh0styx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 underline underline-offset-4 hover:text-foreground">
+              @gh0styx
+            </a>
+          </span>
           {(["mesh", "linear", "radial"] as const).map((t) => (
             <button
               key={t}
@@ -112,6 +123,17 @@ export default function Home() {
           <ExportPanel state={normalized} />
         </aside>
       </div>
+
+      <footer className="text-xs text-foreground/60 mt-2">
+        created by gh0sty —
+        <a
+          href="https://github.com/gh0styx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1 underline underline-offset-4 hover:text-foreground">
+          @gh0styx
+        </a>
+      </footer>
     </div>
   );
 }
